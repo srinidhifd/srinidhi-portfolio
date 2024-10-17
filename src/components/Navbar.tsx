@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FaSun, FaMoon, FaBars, FaTimes } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link as ScrollLink } from 'react-scroll';
 
 interface NavbarProps {
   theme: string;
@@ -25,6 +25,12 @@ const Navbar: React.FC<NavbarProps> = ({ theme, setTheme }) => {
   useEffect(() => {
     // Apply the theme to the entire document
     document.body.className = theme === 'light' ? 'bg-white text-black' : 'bg-[#1a1a1a] text-white';
+
+    if (theme === 'dark') {
+      document.body.classList.add('dark-theme'); // Add custom dark theme class
+    } else {
+      document.body.classList.remove('dark-theme'); // Remove custom dark theme class
+    }
   }, [theme]);
 
   // Toggle theme between light and dark modes
@@ -61,16 +67,54 @@ const Navbar: React.FC<NavbarProps> = ({ theme, setTheme }) => {
           >
             <ul className="flex gap-10 text-white font-semibold">
               <li className="hover:text-orange-500">
-                <Link to="/" className="hover:border-b-2 border-orange-500 pb-1">Home</Link>
+                <ScrollLink
+                  to="home"
+                  smooth={true}
+                  duration={500}
+                  className="cursor-pointer hover:border-b-2 border-orange-500 pb-1"
+                >
+                  Home
+                </ScrollLink>
               </li>
               <li className="hover:text-orange-500">
-                <Link to="/projects" className="hover:border-b-2 border-orange-500 pb-1">Projects</Link>
+                <ScrollLink
+                  to="projects"
+                  smooth={true}
+                  duration={500}
+                  className="cursor-pointer hover:border-b-2 border-orange-500 pb-1"
+                >
+                  Projects
+                </ScrollLink>
               </li>
               <li className="hover:text-orange-500">
-                <Link to="/experience" className="hover:border-b-2 border-orange-500 pb-1">Experience</Link>
+                <ScrollLink
+                  to="experience"
+                  smooth={true}
+                  duration={500}
+                  className="cursor-pointer hover:border-b-2 border-orange-500 pb-1"
+                >
+                  Experience
+                </ScrollLink>
               </li>
               <li className="hover:text-orange-500">
-                <Link to="/contact" className="hover:border-b-2 border-orange-500 pb-1">Contact</Link>
+                <ScrollLink
+                  to="skills"
+                  smooth={true}
+                  duration={500}
+                  className="cursor-pointer hover:border-b-2 border-orange-500 pb-1"
+                >
+                  Skills
+                </ScrollLink>
+              </li>
+              <li className="hover:text-orange-500">
+                <ScrollLink
+                  to="contact"
+                  smooth={true}
+                  duration={500}
+                  className="cursor-pointer hover:border-b-2 border-orange-500 pb-1"
+                >
+                  Contact
+                </ScrollLink>
               </li>
             </ul>
           </nav>
@@ -125,16 +169,59 @@ const Navbar: React.FC<NavbarProps> = ({ theme, setTheme }) => {
               </div>
               <ul className="text-white text-lg font-medium space-y-6">
                 <li className="hover:border-b border-orange-500 pb-1">
-                  <Link to="/" onClick={closeMenu}>Home</Link>
+                  <ScrollLink
+                    to="home"
+                    smooth={true}
+                    duration={500}
+                    onClick={closeMenu}
+                    className="cursor-pointer"
+                  >
+                    Home
+                  </ScrollLink>
                 </li>
                 <li className="hover:border-b border-orange-500 pb-1">
-                  <Link to="/projects" onClick={closeMenu}>Projects</Link>
+                  <ScrollLink
+                    to="projects"
+                    smooth={true}
+                    duration={500}
+                    onClick={closeMenu}
+                    className="cursor-pointer"
+                  >
+                    Projects
+                  </ScrollLink>
                 </li>
                 <li className="hover:border-b border-orange-500 pb-1">
-                  <Link to="/experience" onClick={closeMenu}>Experience</Link>
+                  <ScrollLink
+                    to="experience"
+                    smooth={true}
+                    duration={500}
+                    onClick={closeMenu}
+                    className="cursor-pointer"
+                  >
+                    Experience
+                  </ScrollLink>
                 </li>
                 <li className="hover:border-b border-orange-500 pb-1">
-                  <Link to="/contact" onClick={closeMenu}>Contact</Link>
+                  <ScrollLink
+                    to="skills"
+                    smooth={true}
+                    duration={500}
+                    onClick={closeMenu}
+                    className="cursor-pointer"
+                  >
+                    Skills
+                  </ScrollLink>
+                </li>
+                <li className="hover:border-b border-orange-500 pb-1">
+                  <ScrollLink
+                    to="contact"
+                    smooth={true}
+                    duration={500}
+                    onClick={closeMenu}
+                    className="cursor-pointer"
+                  >
+                    Contact
+                  </ScrollLink>
                 </li>
               </ul>
             </div>

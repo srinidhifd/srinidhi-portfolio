@@ -6,6 +6,7 @@ import Experience from './components/Experience';
 import Skills from './components/Skills';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import ScrollToTopButton from './components/ScrollToTopButton'; // Import the scroll to top button
 import { BrowserRouter } from 'react-router-dom';
 
 function App() {
@@ -17,12 +18,13 @@ function App() {
         <Navbar theme={theme} setTheme={setTheme} />
         <main className="max-w-5xl mx-auto">
           <Intro theme={theme} />
-          <Projects theme={theme}/>
-          <Experience theme={theme}/>
-          <Skills theme={theme}/>
-          <Contact theme={theme}/>
+          <Projects theme={theme} />
+          <Experience theme={theme} />
+          <Skills theme={theme} />
+          <Contact theme={theme} />
         </main>
-        <Footer theme={theme}/>
+        <Footer theme={theme} />
+        <ScrollToTopButton theme={theme} /> {/* Pass the theme prop here */}
       </div>
     </BrowserRouter>
   );

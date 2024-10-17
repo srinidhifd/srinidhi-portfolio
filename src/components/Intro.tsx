@@ -3,7 +3,7 @@ import { FaEnvelope, FaPhoneAlt, FaGithub, FaLinkedin, FaFileAlt } from 'react-i
 
 const Intro = ({ theme }: { theme: string }) => {
   return (
-    <div className="w-4/5 container mx-auto pt-24 pb-20 px-6">
+    <div className="w-4/5 container mx-auto pt-24 pb-10 px-6">
       {/* Top Section */}
       <div
         id="home"
