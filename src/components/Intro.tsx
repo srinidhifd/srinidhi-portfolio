@@ -1,10 +1,9 @@
-import React from 'react';
 import srinidhiImage from '../assets/srinidhi.jpg'; // Adjust the import path as necessary
 import { FaEnvelope, FaPhoneAlt, FaGithub, FaLinkedin, FaFileAlt } from 'react-icons/fa';
 
 const Intro = () => {
   return (
-    <div className="w-3/5 container mx-auto py-20 px-6 text-black">
+    <div className="w-4/5 container mx-auto py-20 px-6 text-black">
       {/* Top Section */}
       <div id="home" className="flex flex-col md:flex-row items-center gap-12">
         {/* Left section: Text content */}

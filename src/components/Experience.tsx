@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 const Experience = () => (
   <div id="experience" className="py-20 text-center">
