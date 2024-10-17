@@ -17,12 +17,12 @@ function App() {
         <Navbar theme={theme} setTheme={setTheme} />
         <main className="max-w-5xl mx-auto">
           <Intro theme={theme} />
-          <Projects />
-          <Experience />
-          <Skills />
-          <Contact />
+          <Projects theme={theme}/>
+          <Experience theme={theme}/>
+          <Skills theme={theme}/>
+          <Contact theme={theme}/>
         </main>
-        <Footer />
+        <Footer theme={theme}/>
       </div>
     </BrowserRouter>
   );
