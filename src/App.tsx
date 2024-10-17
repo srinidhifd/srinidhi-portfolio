@@ -13,16 +13,20 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className="max-w-5xl mx-auto">
+      <div
+        className={`${
+          theme === 'dark' ? 'bg-gray-900 text-white' : 'bg-white text-black'
+        } transition-all duration-500 min-h-screen`}
+      >
         <Navbar theme={theme} setTheme={setTheme} />
-        <main>
-          <Intro />
-          <Projects />
-          <Experience />
-          <Skills />
-          <Contact />
+        <main className="max-w-5xl mx-auto py-10">
+          <Intro theme={theme} />
+          <Projects theme={theme} />
+          <Experience theme={theme} />
+          <Skills theme={theme} />
+          <Contact theme={theme} />
         </main>
-        <Footer />
+        <Footer theme={theme} />
       </div>
     </BrowserRouter>
   );

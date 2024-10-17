@@ -21,10 +21,9 @@ const Navbar: React.FC<NavbarProps> = ({ theme, setTheme }) => {
     };
   }, []);
 
-  // Effect to update the page background color based on the theme
   useEffect(() => {
-    document.body.style.backgroundColor = theme === 'light' ? '#f3f4f6' : '#1e1e1e';
-    document.body.style.color = theme === 'light' ? '#1e1e1e' : '#f3f4f6';
+    // Apply the theme to the entire document
+    document.body.className = theme === 'light' ? 'bg-white text-black' : 'bg-[#1a1a1a] text-white';
   }, [theme]);
 
   // Toggle theme between light and dark modes
@@ -48,13 +47,17 @@ const Navbar: React.FC<NavbarProps> = ({ theme, setTheme }) => {
   return (
     <div className="font-poppins">
       <div
-        className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-          isScrolled ? 'bg-[#2f2f2f]/80 backdrop-blur-lg shadow-md' : 'bg-transparent'
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+          isScrolled ? 'bg-white/50 backdrop-blur-lg shadow-md dark:bg-black/50' : 'bg-transparent'
         }`}
       >
-        <div className="flex items-center justify-between py-4 relative max-w-5xl mx-auto px-4 md:px-0">
+        <div className="flex items-center justify-between py-4 relative max-w-6xl mx-auto px-4 md:px-8">
           {/* Main Navigation (Hidden on Mobile) */}
-          <nav className="hidden md:flex items-center justify-center bg-[#2f2f2f] py-3 px-8 rounded-full shadow-lg">
+          <nav
+            className={`hidden md:flex items-center justify-center bg-[#2f2f2f] py-4 px-10 rounded-full shadow-lg ml-[30%] ${
+              isScrolled && theme === 'dark' ? 'border border-white' : ''
+            }`}
+          >
             <ul className="flex gap-10 text-white font-semibold">
               <li className="hover:text-orange-500">
                 <a href="#home" className="hover:border-b-2 border-orange-500 pb-1">Home</a>
@@ -73,7 +76,9 @@ const Navbar: React.FC<NavbarProps> = ({ theme, setTheme }) => {
 
           {/* Theme Toggle Switch */}
           <div
-            className="flex items-center cursor-pointer justify-between w-16 h-9 rounded-full p-1 transition-all duration-300 bg-gray-200 relative ml-auto md:ml-4"
+            className={`flex items-center cursor-pointer justify-between w-16 h-9 rounded-full p-1 transition-all duration-300 bg-gray-200 relative ml-auto md:ml-2 ${
+              isScrolled && theme === 'dark' ? 'border border-white' : ''
+            }`}
             onClick={toggleTheme}
             style={{ backgroundColor: theme === 'light' ? '#2f2f2f' : '#2f2f2f' }}
           >
@@ -86,12 +91,12 @@ const Navbar: React.FC<NavbarProps> = ({ theme, setTheme }) => {
               }}
             ></div>
             <FaSun
-              className={`absolute left-2 text-sm transition-opacity duration-300 ${
+              className={`absolute left-3 text-sm transition-opacity duration-300 ${
                 theme === 'dark' ? 'text-yellow-400 opacity-0' : 'text-yellow-400 opacity-100'
               }`}
             />
             <FaMoon
-              className={`absolute right-2 text-sm transition-opacity duration-300 ${
+              className={`absolute right-3 text-sm transition-opacity duration-300 ${
                 theme === 'light' ? 'text-gray-800 opacity-0' : 'text-yellow-300 opacity-100'
               }`}
             />
@@ -99,9 +104,7 @@ const Navbar: React.FC<NavbarProps> = ({ theme, setTheme }) => {
 
           {/* Hamburger Icon for Mobile */}
           <FaBars
-            className={`md:hidden text-2xl cursor-pointer absolute right-5 ${
-              theme === 'light' ? 'text-black' : 'text-white'
-            }`}
+            className="md:hidden text-black dark:text-white text-2xl cursor-pointer absolute left-5"
             onClick={toggleMenu}
           />
         </div>
