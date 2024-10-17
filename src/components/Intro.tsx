@@ -3,7 +3,7 @@ import { FaEnvelope, FaPhoneAlt, FaGithub, FaLinkedin, FaFileAlt } from 'react-i
 
 const Intro = ({ theme }: { theme: string }) => {
   return (
-    <div className="w-4/5 container mx-auto py-20 px-6">
+    <div className="w-4/5 container mx-auto pt-24 pb-20 px-6">
       {/* Top Section */}
       <div
         id="home"
@@ -13,16 +13,16 @@ const Intro = ({ theme }: { theme: string }) => {
       >
         {/* Left section: Text content */}
         <div className="md:flex-1 text-center md:text-left">
-          <h1 className="text-5xl font-bold mb-4 leading-tight">Hi, I'm Srinidhi Kulkarni</h1>
-          <p className="text-2xl font-medium mb-4">
+          <h1 className="text-4xl font-bold mb-4 leading-tight">Hi, I'm Srinidhi Kulkarni</h1>
+          <p className="text-xl font-medium mb-4">
             Frontend Developer | Open Source Contributor | MCA Graduate
           </p>
-          <p className="mt-4 text-lg leading-relaxed">
+          <p className="mt-4 text-md leading-relaxed">
             I specialize in building interactive, responsive web interfaces with modern technologies.
           </p>
 
           {/* Contact Icons */}
-          <div className="flex justify-center md:justify-start space-x-6 mt-6">
+          <div className="flex justify-center md:justify-start space-x-6 mt-8">
             <a
               href="mailto:srinidhikulkarni25@gmail.com"
               target="_blank"
@@ -78,7 +78,7 @@ const Intro = ({ theme }: { theme: string }) => {
 
       {/* About Me Section */}
       <div className={`mt-20 text-center md:text-left ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
-        <h2 className="text-4xl font-bold mb-6">About Me</h2>
+        <h2 className="text-4xl font-bold mb-4">About Me</h2>
         <p className="text-lg leading-relaxed">
           I am a passionate Frontend Developer with a strong foundation in building modern web interfaces.
           I am skilled in using React, JavaScript, and other cutting-edge technologies to create scalable,

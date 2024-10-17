@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FaSun, FaMoon, FaBars, FaTimes } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 interface NavbarProps {
   theme: string;
@@ -48,28 +49,28 @@ const Navbar: React.FC<NavbarProps> = ({ theme, setTheme }) => {
     <div className="font-poppins">
       <div
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-          isScrolled ? 'bg-white/50 backdrop-blur-lg shadow-md dark:bg-black/50' : 'bg-transparent'
+          isScrolled ? 'bg-white/50 backdrop-blur-lg shadow-md dark:bg-[#1e293b]/50' : 'bg-transparent'
         }`}
       >
         <div className="flex items-center justify-between py-4 relative max-w-6xl mx-auto px-4 md:px-8">
           {/* Main Navigation (Hidden on Mobile) */}
           <nav
-            className={`hidden md:flex items-center justify-center bg-[#2f2f2f] py-4 px-10 rounded-full shadow-lg ml-[30%] ${
+            className={`hidden md:flex items-center justify-center bg-[#1e293b] py-4 px-10 rounded-full shadow-lg ml-[30%] ${
               isScrolled && theme === 'dark' ? 'border border-white' : ''
             }`}
           >
             <ul className="flex gap-10 text-white font-semibold">
               <li className="hover:text-orange-500">
-                <a href="#home" className="hover:border-b-2 border-orange-500 pb-1">Home</a>
+                <Link to="/" className="hover:border-b-2 border-orange-500 pb-1">Home</Link>
               </li>
               <li className="hover:text-orange-500">
-                <a href="#projects" className="hover:border-b-2 border-orange-500 pb-1">Projects</a>
+                <Link to="/projects" className="hover:border-b-2 border-orange-500 pb-1">Projects</Link>
               </li>
               <li className="hover:text-orange-500">
-                <a href="#experience" className="hover:border-b-2 border-orange-500 pb-1">Experience</a>
+                <Link to="/experience" className="hover:border-b-2 border-orange-500 pb-1">Experience</Link>
               </li>
               <li className="hover:text-orange-500">
-                <a href="#contact" className="hover:border-b-2 border-orange-500 pb-1">Contact</a>
+                <Link to="/contact" className="hover:border-b-2 border-orange-500 pb-1">Contact</Link>
               </li>
             </ul>
           </nav>
@@ -80,7 +81,7 @@ const Navbar: React.FC<NavbarProps> = ({ theme, setTheme }) => {
               isScrolled && theme === 'dark' ? 'border border-white' : ''
             }`}
             onClick={toggleTheme}
-            style={{ backgroundColor: theme === 'light' ? '#2f2f2f' : '#2f2f2f' }}
+            style={{ backgroundColor: theme === 'light' ? '#1e293b' : '#1e293b' }}
           >
             <div
               className={`w-8 h-8 rounded-full transform transition-transform duration-300 ${
@@ -112,10 +113,10 @@ const Navbar: React.FC<NavbarProps> = ({ theme, setTheme }) => {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div
-            className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-80 z-50"
+            className="fixed top-0 left-0 w-full h-full bg-[#1e293b] bg-opacity-80 z-50"
             onClick={closeMenu}
           >
-            <div className="fixed top-0 left-0 w-2/3 max-w-sm h-full bg-[#2f2f2f] py-8 px-6 z-60 shadow-lg">
+            <div className="fixed top-0 left-0 w-2/3 max-w-sm h-full bg-[#1e293b] py-8 px-6 z-60 shadow-lg">
               <div className="flex items-center justify-between mb-8">
                 <FaTimes
                   className="text-white text-2xl cursor-pointer"
@@ -123,17 +124,17 @@ const Navbar: React.FC<NavbarProps> = ({ theme, setTheme }) => {
                 />
               </div>
               <ul className="text-white text-lg font-medium space-y-6">
-                <li>
-                  <a href="#home" onClick={closeMenu}>Home</a>
+                <li className="hover:border-b border-orange-500 pb-1">
+                  <Link to="/" onClick={closeMenu}>Home</Link>
                 </li>
-                <li>
-                  <a href="#projects" onClick={closeMenu}>Projects</a>
+                <li className="hover:border-b border-orange-500 pb-1">
+                  <Link to="/projects" onClick={closeMenu}>Projects</Link>
                 </li>
-                <li>
-                  <a href="#experience" onClick={closeMenu}>Experience</a>
+                <li className="hover:border-b border-orange-500 pb-1">
+                  <Link to="/experience" onClick={closeMenu}>Experience</Link>
                 </li>
-                <li>
-                  <a href="#contact" onClick={closeMenu}>Contact</a>
+                <li className="hover:border-b border-orange-500 pb-1">
+                  <Link to="/contact" onClick={closeMenu}>Contact</Link>
                 </li>
               </ul>
             </div>

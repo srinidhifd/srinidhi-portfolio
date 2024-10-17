@@ -7,11 +7,11 @@ interface ProjectProps {
 }
 
 const Project = ({ name, description, techStack, github, live }: ProjectProps) => (
-  <div className="p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow w-full md:w-1/3 lg:w-1/4 flex flex-col justify-between dark:bg-[#1e293b] bg-white dark:text-gray-100 text-black border border-gray-300 dark:border-transparent">
-    <h3 className="text-xl font-bold mb-4">{name}</h3>
-    <p className="mb-4 text-justify">{description}</p>
-    <div className="mb-4">
-      <h4 className="font-semibold">Tech Stack:</h4>
+  <div className="p-5 rounded-lg shadow-lg hover:shadow-xl transition-shadow w-full md:w-[30%] flex flex-col justify-between dark:bg-gray-800 bg-white dark:text-gray-100 text-black border border-gray-300 dark:border-gray-700">
+    <h3 className="text-2xl font-semibold mb-1">{name}</h3>
+    <p className="mb-2">{description}</p>
+    <div className="mb-1">
+      <h4 className="font-semibold mb-1">Tech Stack:</h4>
       <ul className="flex flex-wrap gap-2 mt-2">
         {techStack.map((tech, index) => (
           <li key={index} className="inline-block bg-gray-200 dark:bg-[#334155] px-2 py-1 rounded-md text-sm">
@@ -20,11 +20,21 @@ const Project = ({ name, description, techStack, github, live }: ProjectProps) =
         ))}
       </ul>
     </div>
-    <div className="mt-4 space-x-4">
-      <a href={github} target="_blank" rel="noopener noreferrer" className="underline hover:text-orange-400 transition-colors">
+    <div className="flex justify-between mt-4">
+      <a
+        href={github}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="underline hover:text-orange-400 transition-colors"
+      >
         GitHub
       </a>
-      <a href={live} target="_blank" rel="noopener noreferrer" className="underline hover:text-orange-400 transition-colors">
+      <a
+        href={live}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="underline hover:text-orange-400 transition-colors"
+      >
         Live Preview
       </a>
     </div>
@@ -34,14 +44,14 @@ const Project = ({ name, description, techStack, github, live }: ProjectProps) =
 const Projects = ({ theme }: { theme: string }) => (
   <div
     id="projects"
-    className={`py-20 px-6 text-center ${theme === 'dark' ? 'text-white ' : 'text-black '}`}
+    className={`py-16 px-6 text-center ${theme === 'dark' ? 'text-white' : 'text-black'}`}
   >
     <h2 className="text-4xl font-bold mb-10">Projects</h2>
-    <div className="flex flex-wrap justify-center gap-8">
+    <div className="flex flex-wrap justify-around gap-8">
       <Project
         name="Movie App"
         description="Web app to search and manage movie collections with an intuitive user interface."
-        techStack={['Angular', 'Node.js', 'Bootstrap', 'OMDb API']}
+        techStack={['Angular', 'Bootstrap', 'OMDb API']}
         github="https://github.com/srinidhifd/AngularMovieWebsite"
         live="https://movie-hub-omdbi.netlify.app/signin"
       />
