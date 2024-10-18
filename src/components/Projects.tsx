@@ -9,8 +9,8 @@ interface ProjectProps {
 const Project = ({ name, description, techStack, github, live }: ProjectProps) => (
   <div className="p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow w-full md:w-[30%] flex flex-col justify-between dark:bg-gray-800 bg-white dark:text-gray-100 text-black border border-gray-300 dark:border-gray-700 hover:transform hover:scale-105 duration-300">
     <h3 className="text-2xl font-semibold mb-3">{name}</h3>
-    <p className="mb-4 text-sm text-justify leading-relaxed">{description}</p>
-    <div className="mb-4">
+    <p className="mb-2 text-sm text-justify leading-relaxed">{description}</p>
+    <div className="mb-2">
       <h4 className="font-semibold mb-2 text-sm">Tech Stack:</h4>
       <ul className="flex flex-wrap gap-2 justify-center">
         {techStack.map((tech, index) => (

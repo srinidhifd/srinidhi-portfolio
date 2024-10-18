@@ -1,23 +1,27 @@
 const Experience = ({ theme }: { theme: string }) => (
-  <div id="experience" className={`py-20 px-6 ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
+  <div id="experience" className={`py-20 px-4 ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
     <h2 className="text-4xl font-bold text-center mb-10">Experience</h2>
     <div className="mt-8 space-y-6 max-w-4xl mx-auto">
       {/* Freelance Full Stack Developer Experience */}
       <div className="p-6 rounded-lg shadow-lg border border-gray-300 dark:border-gray-700 dark:bg-gray-800 bg-white relative">
-        <div className="absolute top-4 right-4 text-sm text-gray-500 dark:text-gray-400 text-right">
+        <div className="absolute top-8 right-4 text-sm text-gray-500 dark:text-gray-400 text-right">
           <p>Sep 2024 - Present</p>
           <p>Remote</p>
         </div>
         <h3 className="text-2xl font-semibold mb-1">Lumin AI Systems</h3>
         <h4 className="text-lg italic font-medium mb-4">Freelance Full Stack Developer</h4>
         <div className="space-y-2 text-justify">
-          <p>Improved user interfaces and resolved UI bugs for SST Cutting Tools using React.js, as part of a system built on FastAPI and PostgreSQL.</p>
-          <p>Designed and implemented responsive dashboards for ERP systems at Yespee Engineering and Pro B Machines Pvt Ltd using React.js and Tailwind CSS, improving performance and usability.</p>
+          <p>
+            Improved user interfaces and resolved UI bugs for SST Cutting Tools using React.js, as part of a system built on FastAPI and PostgreSQL.
+          </p>
+          <p>
+            Designed and implemented responsive dashboards for ERP systems at Yespee Engineering and Pro B Machines Pvt Ltd using React.js and Tailwind CSS, improving performance and usability.
+          </p>
         </div>
       </div>
       {/* Full Stack Developer Intern Experience */}
       <div className="p-6 rounded-lg shadow-lg border border-gray-300 dark:border-gray-700 dark:bg-gray-800 bg-white relative">
-        <div className="absolute top-4 right-4 text-sm text-gray-500 dark:text-gray-400 text-right">
+        <div className="absolute top-8 right-4 text-sm text-gray-500 dark:text-gray-400 text-right">
           <p>Oct 2023 - Nov 2023</p>
           <p>Bengaluru</p>
         </div>
