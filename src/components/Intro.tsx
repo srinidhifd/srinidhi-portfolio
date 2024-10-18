@@ -1,4 +1,11 @@
-import srinidhiImage from '../assets/srinidhi.jpg';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
+
+import srinidhiSmall from '../assets/srinidhi-small.webp';
+import srinidhiMedium from '../assets/srinidhi-medium.webp';
+import srinidhiLarge from '../assets/srinidhi-large.webp';
+import srinidhiDefault from '../assets/srinidhi.webp';
+
 import { FaEnvelope, FaPhoneAlt, FaGithub, FaLinkedin, FaFileAlt } from 'react-icons/fa';
 
 const Intro = ({ theme }: { theme: string }) => {
@@ -68,9 +75,12 @@ const Intro = ({ theme }: { theme: string }) => {
 
         {/* Right section: Image */}
         <div className="md:flex-1 flex justify-center md:justify-end">
-          <img
-            src={srinidhiImage}
+          <LazyLoadImage
+            src={srinidhiDefault}
+            srcSet={`${srinidhiSmall} 480w, ${srinidhiMedium} 1024w, ${srinidhiLarge} 1600w`}
+            sizes="(max-width: 600px) 480px, (max-width: 1200px) 1024px, 1600px"
             alt="Srinidhi Kulkarni"
+            effect="blur"
             className="w-64 h-64 rounded-lg object-cover shadow-lg"
           />
         </div>
