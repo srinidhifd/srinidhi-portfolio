@@ -1,10 +1,10 @@
 import { FaEnvelope, FaPhone, FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const Contact = ({ theme }: { theme: string }) => (
-  <div id="contact" className={`py-10 px-4 ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
-    <h2 className="text-4xl font-bold text-center mb-8">Contact Me</h2>
+  <div id="contact" className={`py-20 px-4 ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
+    <h2 className="text-4xl font-bold text-center mb-10">Contact Me</h2>
     <p className="text-lg text-center mb-10">Feel free to reach out to me through any of the following channels:</p>
-    <div className="flex flex-wrap justify-center gap-10 max-w-5xl mx-auto">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 max-w-3xl mx-auto">
       {/* Contact Cards */}
       {[
         {
@@ -34,16 +34,20 @@ const Contact = ({ theme }: { theme: string }) => (
       ].map((contact, index) => (
         <div
           key={index}
-          className="flex items-center justify-center p-6 w-full sm:w-80 max-w-xs rounded-lg shadow-md border border-gray-300 dark:border-gray-700 dark:bg-gray-800 bg-white hover:shadow-lg transition-all duration-300"
+          className="flex flex-col items-center justify-center p-6 w-full sm:w-auto rounded-lg shadow-md border border-gray-300 dark:border-gray-700 dark:bg-gray-800 bg-white hover:shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-opacity-80"
         >
-          <div className={`flex items-center justify-center p-3 rounded-full ${theme === 'dark' ? 'bg-gray-700' : 'bg-gray-300'}`}>
-            <contact.Icon className={`text-2xl ${contact.color}`} />
+          <div
+            className={`flex items-center justify-center p-3 rounded-full mb-4 ${
+              theme === 'dark' ? 'bg-gray-700' : 'bg-gray-300'
+            }`}
+          >
+            <contact.Icon className={`text-3xl ${contact.color}`} />
           </div>
           <a
             href={contact.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-lg font-semibold ml-4 hover:underline"
+            className="text-lg font-semibold text-center hover:underline"
           >
             {contact.value}
           </a>
