@@ -7,7 +7,7 @@ interface ProjectProps {
 }
 
 const Project = ({ name, description, techStack, github, live }: ProjectProps) => (
-  <div className="p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow w-full md:w-[30%] flex flex-col justify-between dark:bg-gray-800 bg-white dark:text-gray-100 text-black border border-gray-300 dark:border-gray-700 hover:transform hover:scale-105 duration-300">
+  <div className="p-4 rounded-lg shadow-md hover:shadow-lg transition-transform transition-shadow ease-in-out duration-300 w-full md:w-[30%] flex flex-col justify-between dark:bg-gray-800 bg-white dark:text-gray-100 text-black border border-gray-300 dark:border-gray-700 hover:transform hover:scale-105">
     <h3 className="text-2xl font-semibold mb-3">{name}</h3>
     <p className="mb-2 text-sm text-justify leading-relaxed">{description}</p>
     <div className="mb-2">
