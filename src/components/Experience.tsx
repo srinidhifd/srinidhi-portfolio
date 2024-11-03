@@ -10,7 +10,7 @@ const Experience = ({ theme }: { theme: string }) => (
             <h4 className="text-lg italic font-medium mb-2 md:mb-0">Freelance Full Stack Developer</h4>
           </div>
           <div className="text-sm text-gray-500 dark:text-gray-400 mt-2 md:mt-0 md:text-left">
-            <p className="md:text-right">Sep 2024 - Present</p>
+            <p className="md:text-right">Sep 2024 - Oct 2024</p>
             <p className="md:text-right">Remote</p>
           </div>
         </div>
