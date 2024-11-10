@@ -49,6 +49,14 @@ const Projects = ({ theme }: { theme: string }) => (
     <h2 className="text-4xl font-bold mb-12">Projects</h2>
     <div className="flex flex-wrap justify-around gap-10">
       <Project
+        name="Book Corner"
+        description="A full-stack MERN bookstore management app with REST API integration for streamlined inventory control. The app is deployed on Render and provides a responsive user experience across devices."
+        techStack={['React.js', 'Node.js', 'Express.js', 'MongoDB']}
+        github="https://github.com/srinidhifd/BookCorner"
+        live="https://book-corner-frontend.onrender.com"
+      />
+
+      <Project
         name="Movie App"
         description="Web app to search and manage movie collections with an intuitive user interface."
         techStack={['Angular', 'Bootstrap', 'OMDb API']}
@@ -61,13 +69,6 @@ const Projects = ({ theme }: { theme: string }) => (
         techStack={['Angular', 'Bootstrap']}
         github="https://github.com/srinidhifd/password-generator"
         live="https://password-generators-sk.netlify.app/"
-      />
-      <Project
-        name="Portfolio Website"
-        description="Personal portfolio website featuring dark mode support."
-        techStack={['React', 'TailwindCSS']}
-        github="https://github.com/srinidhifd/srinidhi-portfolio"
-        live="https://srinidhi-kulkarni.vercel.app/"
       />
     </div>
   </div>
