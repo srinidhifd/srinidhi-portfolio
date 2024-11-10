@@ -50,8 +50,8 @@ const Projects = ({ theme }: { theme: string }) => (
     <div className="flex flex-wrap justify-around gap-10">
       <Project
         name="Book Corner"
-        description="A full-stack MERN bookstore management app with REST API integration for streamlined inventory control. The app is deployed on Render and provides a responsive user experience across devices."
-        techStack={['React.js', 'Node.js', 'Express.js', 'MongoDB']}
+        description="A full-stack CRUD application for managing book inventory with a simple, user-friendly interface."
+        techStack={['React.js', 'Node.js', 'Express.js', 'MongoDB','Tailwind CSS','Mongoose']}
         github="https://github.com/srinidhifd/BookCorner"
         live="https://book-corner-frontend.onrender.com"
       />
