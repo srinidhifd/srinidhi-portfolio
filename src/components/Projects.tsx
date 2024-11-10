@@ -52,7 +52,7 @@ const Projects = ({ theme }: { theme: string }) => (
         name="Book Corner"
         description="A full-stack CRUD application for managing book inventory with a simple, user-friendly interface."
         techStack={['React.js', 'Node.js', 'Express.js', 'MongoDB','Tailwind CSS','Mongoose']}
-        github="https://github.com/srinidhifd/BookCorner"
+        github="https://github.com/srinidhifd/Book-Corner"
         live="https://book-corner-frontend.onrender.com"
       />
 
